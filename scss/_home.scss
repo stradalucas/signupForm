@@ -1,0 +1,192 @@
+* {
+    box-sizing: border-box;
+}
+
+p {
+    font-size: 15px;
+    margin: 0px;
+}
+
+body {
+    background-color: $Red;
+    background-image: url(/images/bg-intro-mobile.png);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    @include set-mq(small) {
+        background-image: url(/images/bg-intro-desktop.png);
+    }
+}
+
+.signup {
+    min-height: calc(100vh - 32px);
+}
+
+.signup__left {
+    width: 100%;
+    max-width: 540px;
+    padding: 90px 35px 70px;
+    margin: 0;
+    @include set-mq(small) {
+        padding: 70px 25px;
+    }
+    @include set-mq(xlarge) {
+        padding: 0;
+    }
+    h1 {
+        font-size: 25px;
+        font-weight: 700;
+        text-align: center;
+        line-height: 1.5;
+        padding-bottom: 30px;
+        margin: 0;
+        @include set-mq (small) {
+            font-size: 40px;
+            text-align: left;
+        }
+    }
+    p {
+        letter-spacing: .5px;
+        opacity: .85;
+        text-align: center;
+        @include set-mq(small) {
+            text-align: left;
+        }
+    }
+}
+
+.signup__right {
+    padding: 0 25px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 540px;
+    @include set-mq(small) {
+        margin-bottom: 0px;
+        padding: 0;
+    }
+    .box {
+        padding: 25px;
+        text-align: center;
+        border-radius: 7px;
+        background-color: #fff;
+        box-shadow: 0 6px rgba(0, 0, 0, 0.2);
+        @include set-mq(xlarge) {
+            padding: 40px;
+        }
+        &-blue {
+            background-color: $Blue;
+            padding: 18px;
+            line-height: 1.85;
+        }
+    }
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+    & small {
+        text-align: right;
+        font-weight: 500;
+        font-style: italic;
+        color: $Red;
+        position: absolute;
+        opacity: 0;
+        bottom: -22px;
+        right: 0;
+    }
+    input {
+        color: $Dark-Blue;
+        font-size: 14px;
+        font-weight: 500;
+        border-radius: 5px;
+        border: 1px solid $Grayish-Blue;
+        padding: 14px 30px;
+        display: block;
+        width: 100%;
+        @include set-mq(small) {
+            font-size: 16px;
+        }
+        &:focus {
+            border: 1px solid$Dark-Blue;
+            outline: none;
+        }
+    }
+    img {
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        right: 30px;
+        transform: translateY(-50%);
+    }
+}
+
+.form-group.error {
+    input {
+        color: $Red;
+        border-color: $Red;
+        margin-bottom: 35px;
+        &::placeholder {
+            color: $Red;
+        }
+    }
+    img {
+        opacity: 1;
+    }
+    small {
+        opacity: 1;
+    }
+}
+
+button {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: $Green;
+    border-radius: 5px;
+    border: 1px solid $Dark-Green;
+    box-shadow: 0 2px $Dark-Green;
+    padding: 16px;
+    display: block;
+    width: 100%;
+    &:focus {
+        outline: none;
+    }
+    &:active {
+        box-shadow: 0 0 $Dark-Green;
+        transform: translateY(2px);
+    }
+}
+
+small {
+    color: $Grayish-Blue;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 2;
+    margin-top: 16px;
+    display: block;
+    a {
+        color: $Red;
+        font-weight: 700;
+        text-decoration: none;
+        &:hover,
+        &:focus {
+            color: $Red;
+            outline: none;
+        }
+    }
+}
+
+.attribution {
+    font-size: 11px;
+    & a {
+        color: $Blue;
+        font-weight: 500;
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+            color: $Blue;
+            outline: none;
+        }
+    }
+}
